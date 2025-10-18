@@ -1,0 +1,30 @@
+{{> header}}
+  {{data.quizName}} - Question {{data.index}}
+  <br/>
+  <br/>
+  {{>panel text=data.question}}
+
+  <div class="mt-5"></div>
+  <script>
+    ans=null;
+    answer = (i) => {
+      if(ans==null){
+        ans = i+1=={{data.correct}} ? 'correct' : 'incorrect';
+        document.getElementById('a-'+i).classList.add(ans);
+        (i+1=={{data.correct}} ? next : start).classList.add('visible');
+      }
+    }
+  </script>
+  {{#each data.answers}}
+  {{>button text=this btni=@index showBtni=true ida=(concat "a-" @index) onclick=(concat "answer(" @index ")") classa="left"}}
+  {{/each}}
+
+  <div class="mt-5"></div>
+
+  {{#ifEquals data.nextIndex -1}}
+  {{>button text="CONGRATULATIONS! See results" id="next" class=" hidden" href=(concat "quiz_" data.quizId ".html") }}
+  {{else}}
+  {{>button text="Next question" id="next" class=" hidden" href=(concat "q_" data.quizId "_" data.nextIndex ".html") }}
+  {{/ifEquals}}
+  {{>button text="Start again" id="start" class=" hidden" href=(concat "q_" data.quizId "_1.html") }}
+{{> footer}}

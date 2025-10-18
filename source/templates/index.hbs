@@ -1,0 +1,17 @@
+{{> header}}
+<div class="m-outer">
+  <div class="m-wrapper">
+    <span class="m-inner">Select a quiz!</span>
+  </div>
+</div>
+
+<div class="mt-5"></div>
+{{#each global.quizes}}
+  <br/>
+  <div class="m-outer mt-2">
+    <div class="m-wrapper">
+      <a class="m-btn" href="quiz_{{id}}.html">{{name}}</a>
+    </div>
+  </div>
+{{/each}}
+{{> footer}}

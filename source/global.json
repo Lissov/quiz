@@ -1,0 +1,35 @@
+{
+  "quizes": [
+    {
+      "id": "tq1",
+      "name": "Simple internet quiz",
+      "questions": [
+        {
+          "index": 1,
+          "nextIndex": 2,
+          "question": "Approximately how much data browser downloads when you open GMail.com (measured on my laptop)?",
+          "answers": [
+            "700 kB",
+            "7 MB",
+            "14 MB",
+            "35 MB"
+          ],
+          "correct": 3
+        },
+        {
+          "index": 2,
+          "nextIndex": -1,
+          "question": "How much data is loaded for one page of this quiz?",
+          "answers": [
+            "4.6 kB",
+            "230 kB",
+            "980 kB",
+            "1.4 MB"
+          ],
+          "correct": 1
+        }
+
+      ]
+    }
+  ]
+}
