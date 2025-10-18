@@ -73,11 +73,11 @@ module.exports.clean = function(directory) {
 module.exports.generate = function(template, data, outputDir, relativePath, lang) {
     data.lang = lang; // switch language
     data.language = lang; // switch language
-    data.context.root = lang === 'de' ? data.context.rootDe : (data.context.rootDe + "..\\");
+    data.context.root = lang === 'en' ? data.context.rootDe : (data.context.rootDe + "..\\");
 
     // Generate HTML
     const outputHtml = template(data);
-    const outDir = lang === 'de' ? outputDir : path.join(outputDir, lang);
+    const outDir = lang === 'en' ? outputDir : path.join(outputDir, lang);
     const outputFilePath = path.join(outDir, relativePath);
   
     // Ensure subdirectories exist in outputs
@@ -90,11 +90,11 @@ module.exports.generate = function(template, data, outputDir, relativePath, lang
 
 module.exports.buildTemplate = function(template, data, outputDir, relativePath, lang) {
     data.lang = lang; // switch language
-    data.context.root = lang === 'de' ? data.context.rootDe : (data.context.rootDe + "..\\");
+    data.context.root = lang === 'en' ? data.context.rootDe : (data.context.rootDe + "..\\");
 
     // Generate HTML
     const outputHtml = template(data);
-    const outDir = lang === 'de' ? outputDir : path.join(outputDir, lang);
+    const outDir = lang === 'en' ? outputDir : path.join(outputDir, lang);
     const outputFilePath = path.join(outDir, relativePath);
   
     // Ensure subdirectories exist in outputs

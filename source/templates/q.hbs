@@ -1,5 +1,5 @@
 {{> header}}
-  {{data.quizName}} - Question {{data.index}}
+  {{data.quizName}} - {{labels.question}} {{data.index}}
   <br/>
   <br/>
   {{>panel text=data.question}}
@@ -22,9 +22,9 @@
   <div class="mt-5"></div>
 
   {{#ifEquals data.nextIndex -1}}
-  {{>button text="CONGRATULATIONS! See results" id="next" class=" hidden" href=(concat "quiz_" data.quizId ".html") }}
+  {{>button text=labels.finalQ id="next" class=" hidden" href=(concat "quiz_" data.quizId ".html") }}
   {{else}}
-  {{>button text="Next question" id="next" class=" hidden" href=(concat "q_" data.quizId "_" data.nextIndex ".html") }}
+  {{>button text=labels.nextQ id="next" class=" hidden" href=(concat "q_" data.quizId "_" data.nextIndex ".html") }}
   {{/ifEquals}}
-  {{>button text="Start again" id="start" class=" hidden" href=(concat "q_" data.quizId "_1.html") }}
+  {{>button text=labels.startAgain id="start" class=" hidden" href=(concat "q_" data.quizId "_1.html") }}
 {{> footer}}

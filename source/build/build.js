@@ -10,7 +10,7 @@ helpers.registerHelpers();
 
 const templatesDir = path.join("..", "templates");
 const partialsDir = path.join("..", "partials");
-const outputDir = path.join("..", "..");
+const outputDir = path.join("..", "..", "site");
 
 registerPartials(partialsDir);
 
@@ -34,7 +34,14 @@ const generateFile = (templateName, postfix, templateData) => {
     global: global,
     data: templateData
   };
+  data.labels = global.labels.en;
   generate(template, data, outputDir, relativePath, 'en');
+  if (templateData && templateData.uk) {
+    data.data.quizName = templateData.quizNameUk;
+    data.data.question = templateData.uk.question;
+    data.data.answers = templateData.uk.answers;
+  }
+  data.labels = global.labels.uk;
   generate(template, data, outputDir, relativePath, 'uk');
 }
 
@@ -46,6 +53,7 @@ for (const quiz of global.quizes) {
   for (const question of quiz.questions) {
     console.log('  Processing question');
     question.quizName = quiz.name;
+    question.quizNameUk = quiz.nameUk;
     question.quizId = quiz.id;
     generateFile("q.hbs", "_" + quiz.id + "_" + question.index, question);
   }

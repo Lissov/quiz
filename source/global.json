@@ -1,32 +1,61 @@
 {
+  "labels": {
+    "en": {
+      "question": "Question",
+      "nextQ": "Next question",
+      "finalQ": "CONGRATULATIONS! See results",
+      "startAgain": "Start again"
+    },
+    "uk": {
+      "question": "Питання",
+      "nextQ": "Наступне питання",
+      "finalQ": "ВІТАЮ! Переглянути результати",
+      "startAgain": "Почати знову"
+    }
+  },
   "quizes": [
     {
       "id": "tq1",
       "name": "Simple internet quiz",
+      "nameUk": "Простий інтернет",
       "questions": [
         {
           "index": 1,
           "nextIndex": 2,
           "question": "Approximately how much data browser downloads when you open GMail.com (measured on my laptop)?",
           "answers": [
-            "700 kB",
-            "7 MB",
-            "14 MB",
-            "35 MB"
+            "1 megabyte",
+            "7 megabytes",
+            "14 megabytes",
+            "35 megabytes"
           ],
-          "correct": 3
+          "correct": 3,
+          "uk": {
+          "question": "Скільки приблизно даних завантажується коли відкриаєш GMail.com (на моєму ноутбуці)?",
+            "answers": [
+              "1 мегабайт",
+              "7 мегабайт",
+              "14 мегабайт",
+              "35 мегабайт"
+            ]
+          }
         },
         {
           "index": 2,
           "nextIndex": -1,
           "question": "How much data is loaded for one page of this quiz?",
-          "answers": [
-            "4.6 kB",
-            "230 kB",
-            "980 kB",
-            "1.4 MB"
+          "answersUk": [
           ],
-          "correct": 1
+          "correct": 1,
+          "uk": {
+            "question": "Скільки даних завантажується для однієї сторінки цієї вікторини?",
+            "answers": [
+              "4.6 кілобайт",
+              "230 кілобайт",
+              "980 кілобайт",
+              "1.4 мегабайт"
+            ]
+          }
         }
 
       ]

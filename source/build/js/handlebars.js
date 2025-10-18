@@ -26,7 +26,7 @@ module.exports.registerHelpers = function() {
                           .replace('Mittel', 'середній')
                           .replace('Schwer', 'важкий')
                           ;
-      case 'de':
+      case 'en':
       default:
         return value;
     }
@@ -35,7 +35,7 @@ module.exports.registerHelpers = function() {
 
   Handlebars.registerHelper('link', function(url, options) {
     const l = !!options.hash.lang ? options.hash.lang : this.lang;
-    const root = l === 'de' ? this.context.root : this.context.root + l + "\\";
+    const root = l === 'en' ? this.context.root : this.context.root + l + "\\";
     return root + url;
   });
 

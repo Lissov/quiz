@@ -1,5 +1,9 @@
 {{> header}}
-  {{>panel text=data.name}}
+  {{#lang 'en'}}{{>panel text=data.name}}{{else}}{{>panel text=data.nameUk}}{{/lang}}
 
+  {{#lang 'en'}}
   {{>button text="Start Quiz" href=(concat "q_" data.id "_1.html")}}
+  {{else}}
+  {{>button text="Почати" href=(concat "q_" data.id "_1.html")}}
+  {{/lang}}
 {{> footer}}

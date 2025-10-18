@@ -1,17 +1,20 @@
 {{> header}}
 <div class="m-outer">
   <div class="m-wrapper">
-    <span class="m-inner">Select a quiz!</span>
+    <span class="m-inner">{{#lang 'en'}}Select a quiz!{{else}}Вибери тему{{/lang}}</span>
   </div>
 </div>
 
 <div class="mt-5"></div>
+{{#lang 'en'}}
 {{#each global.quizes}}
   <br/>
-  <div class="m-outer mt-2">
-    <div class="m-wrapper">
-      <a class="m-btn" href="quiz_{{id}}.html">{{name}}</a>
-    </div>
-  </div>
+  {{>button text=this.name href=(concat "quiz_" this.id ".html")}}
 {{/each}}
+{{else}}
+{{#each global.quizes}}
+  <br/>
+  {{>button text=this.nameUk href=(concat "quiz_" this.id ".html")}}
+{{/each}}
+{{/lang}}
 {{> footer}}
