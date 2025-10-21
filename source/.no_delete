@@ -2,8 +2,12 @@ gps
 images
 source
 docs
+api
 
 LICENSE
 README.md
 styles.css
 web.config
+
+host.json
+staticwebapp.config.json
