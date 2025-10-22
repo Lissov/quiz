@@ -10,7 +10,7 @@ helpers.registerHelpers();
 
 const templatesDir = path.join("..", "templates");
 const partialsDir = path.join("..", "partials");
-const outputDir = path.join("..", "..");
+const outputDir = path.join("..", "..", "site");
 
 registerPartials(partialsDir);
 
